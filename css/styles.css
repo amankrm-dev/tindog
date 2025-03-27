@@ -13,7 +13,9 @@ h1, h2, h3 ,h4, h5, h6 {
   line-height: 1.5;
   font-size: 3.75rem;
   font-weight: 900;
+
 }
+
 .section-heading{
   font-size: 3rem;
   line-height: 1.5;
@@ -35,6 +37,11 @@ h1, h2, h3 ,h4, h5, h6 {
 /* navigation bar */
 .navbar-brand {
   font-size: 2.5rem;
+  
+}
+.navbar-brand img{
+  height: 120px;
+  width: 300px;
 }
 
 .navbar {
@@ -60,6 +67,15 @@ h1, h2, h3 ,h4, h5, h6 {
   transform: rotate(25deg);
   position: absolute;
   right: 30%;
+  animation: wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0); }
 }
 .download-button {
   margin: 5% 3% 5% 0;
@@ -157,4 +173,31 @@ h1, h2, h3 ,h4, h5, h6 {
 .footer-icon{
   margin:1%;
   color: #000;
+}
+
+/* Arrow button animation for the testimonials section */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background for better visibility */
+  border-radius: 50%; /* Make the buttons circular */
+  width: 50px;
+  height: 50px;
+  animation: move-arrows 2s infinite ease-in-out; /* Apply animation */
+}
+
+/* Keyframes for arrow movement */
+@keyframes move-arrows {
+  0%, 100% {
+    transform: translateY(0); /* Initial position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up slightly */
+  }
+}
+
+/* Adjust button hover effect */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
